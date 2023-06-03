@@ -8,6 +8,8 @@ def start_beep(secs):
 def counter(t):
     while t > 0:
         mins, secs = divmod(t, 60)
+        if len(str(secs)) == 1:
+            secs = '0' + str(secs)
         timer = str(mins) + ':' + str(secs)
         print(timer, end='\r')
         time.sleep(1)
